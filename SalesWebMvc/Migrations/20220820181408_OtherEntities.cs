@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace SalesWebMvc.Migrations
 {
@@ -20,16 +20,17 @@ namespace SalesWebMvc.Migrations
                     BaseSalary = table.Column<double>(nullable: false),
                     DepartmentId = table.Column<int>(nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Seller", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Seller_Department_DepartmentId",
-                        column: x => x.DepartmentId,
-                        principalTable: "Department",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
+
+                 constraints: table =>
+                 {
+                     table.PrimaryKey("PK_Seller", x => x.Id);
+                     table.ForeignKey(
+                         name: "FK_Seller_Department_DepartmentId",
+                         column: x => x.DepartmentId,
+                         principalTable: "Department",
+                         principalColumn: "Id",
+                         onDelete: ReferentialAction.Restrict);
+                 });
 
             migrationBuilder.CreateTable(
                 name: "SalesRecord",

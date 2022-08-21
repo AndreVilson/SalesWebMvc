@@ -24,6 +24,7 @@ namespace SalesWebMvc.Models
         {
             Id = id;
             Name = name;
+            Email = email;
             BirthDate = birthDate;
             BaseSalary = baseSalary;
             Department = department;
